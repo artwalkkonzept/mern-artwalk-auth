@@ -1,19 +1,16 @@
 {
-  "name": "my-mern-app",
+  "name": "artwalk-mern-app",
   "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": " cd server && node server.js",
-    "heroku-postbuild": "npm install --prefix client"
+     "start": "nodemon --exec babel-node -r dotenv/config ./src/server.js",
+    "react-dev": "cd client && npm start",
+    "test": "cd server && npm test",
+    "preinstall": "cd server && npm install",
+    "install": "cd client && npm install",
+    "build": "cd client && npm run build"
   },
-  "author": "",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.19.0",
-    "cors": "^2.8.5",
-    "express": "^4.17.1",
-    "mongoose": "^5.10.15"
+    "redux-thunk": "^2.3.0"
   }
 }

@@ -2,12 +2,10 @@
   "name": "artwalk-mern-app",
   "version": "1.0.0",
   "scripts": {
-     "start": "nodemon --exec babel-node -r dotenv/config ./src/server.js",
-    "react-dev": "cd client && npm start",
-    "test": "cd server && npm test",
+      "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cd server && node server.js",
     "preinstall": "cd server && npm install",
-    "install": "cd client && npm install",
-    "build": "cd client && npm run build"
+    "heroku-postbuild": "npm install --prefix client"
   },
   "license": "ISC",
   "dependencies": {

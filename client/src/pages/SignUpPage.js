@@ -4,9 +4,11 @@ import axios from 'axios';
 import { useToken } from '../auth/useToken';
 
 export const SignUpPage = () => {
-    const [token, setToken] = useToken();
+    //const [token, setToken] = useToken();
+    const [ setToken] = useToken();
 
-    const [errorMessage, setErrorMessage] = useState('');
+    //const [errorMessage, setErrorMessage] = useState('');
+    const [errorMessage] = useState('');
 
     const [emailValue, setEmailValue] = useState('');
     const [passwordValue, setPasswordValue] = useState('');
@@ -21,17 +23,18 @@ export const SignUpPage = () => {
         });
         const { token } = response.data;
         setToken(token);
-        history.push('/');
+        history.push(`/please-verify?email=${encodeURIComponent(emailValue)}`);
     }
 
     return (
         <div className="content-container">
-            <h1>Sign Up</h1>
+            <h3>Sign Up</h3>
+            <div>
             {errorMessage && <div className="fail">{errorMessage}</div>}
             <input
                 value={emailValue}
                 onChange={e => setEmailValue(e.target.value)}
-                placeholder="someone@gmail.com" />
+                placeholder="example@gmail.com" />
             <input
                 type="password"
                 value={passwordValue}
@@ -43,13 +46,14 @@ export const SignUpPage = () => {
                 onChange={e => setConfirmPasswordValue(e.target.value)}
                 placeholder="password" />
             <hr />
-            <button
+            <li><button
                 disabled={
                     !emailValue || !passwordValue ||
                     passwordValue !== confirmPasswordValue
                 }
-                onClick={onSignUpClicked}>Sign Up</button>
-            <button onClick={() => history.push('/login')}>Already have an account? Log In</button>
+                onClick={onSignUpClicked}>Sign Up</button></li>
+            <li><button onClick={() => history.push('/login')}>Already have an account? Log In</button></li>
+            </div>
         </div>
     );
 }

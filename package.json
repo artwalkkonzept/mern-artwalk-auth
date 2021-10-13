@@ -1,0 +1,12 @@
+{
+  "name": "artwalk-mern-app",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "nodemon --exec babel-node -r dotenv/config ./src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "heroku-postbuild": "npm install --prefix client"
+  },
+  "license": "ISC",
+  "dependencies": {
+"react-scripts": "^0.9.5"  }
+}

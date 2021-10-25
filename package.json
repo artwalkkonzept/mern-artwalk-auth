@@ -1,11 +1,14 @@
+
+   
 {
-  "name": "artwalk-mern-app",
-  "version": "1.0.0",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "heroku-postbuild": "npm install --prefix client"
-  },
-  "license": "ISC",
-  "dependencies": {
-"react-scripts": "^0.9.5"  }
-}
+    "name": "artwalk-mern-app",
+    "version": "1.0.0",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "cd server && npm run dev",
+        "heroku-postbuild": "npm install --prefix client"
+    },
+    "license": "ISC",
+    "dependencies": {
+  "react-scripts": "^0.9.5"  }
+  }

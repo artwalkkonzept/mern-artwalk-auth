@@ -1,1 +1,0 @@
-This React app is meant to be used with the *auth_api* from the previous lesson.

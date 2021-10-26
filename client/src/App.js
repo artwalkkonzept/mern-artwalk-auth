@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import AuthService from "./AuthService";
 import Login from "./Login";
 
-const API_URL = "http://localhost:5000/api";
+const API_URL  = process.env.REACT_APP_URL || "http://localhost:8080/api";
 
 const authService = new AuthService(`${API_URL}/users/authenticate`);
 

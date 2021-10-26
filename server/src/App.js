@@ -7,7 +7,7 @@ const API_URL = "http://localhost:8080/api";
 const authService = new AuthService(`${API_URL}/users/authenticate`);
 
 function App() {
-  const [artwalks, setArtwalks] = useState([]);
+  const [artwalks, setKittens] = useState([]);
   const [requestCount, setRequestCount] = useState(0);
 
   useEffect(() => {
@@ -15,7 +15,7 @@ function App() {
       const url = `${API_URL}/artwalks`;
       const response = await authService.fetch(url);
       const data = await response.json();
-      setArtwalks(data);
+      setKittens(data);
     }
     getData();
   }, [requestCount]);

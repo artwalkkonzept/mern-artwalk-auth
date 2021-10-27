@@ -3,12 +3,12 @@
  * and storing JSON Web Tokens in the browser's LocalStorage.
  */
 class AuthService {
-  constructor(auth_api_url) {
-    this.auth_api_url = auth_api_url;
+  constructor(auth_app_url) {
+    this.auth_app_url = auth_app_url;
   }
 
   async login(username, password) {
-    const res = await this.fetch(this.auth_api_url, {
+    const res = await this.fetch(this.auth_app_url, {
       method: 'POST',
       body: JSON.stringify({
         username,

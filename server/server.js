@@ -13,7 +13,7 @@ const cors = require("cors");
 const checkJwt = require("express-jwt"); // Validates access tokens automatically
 
 // Configuration
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8080;
 const app = express();
 app.use(cors());
 app.use(bodyParser.json()); // Parse JSON from the request body
@@ -49,20 +49,14 @@ app.use((err, req, res, next) => {
 
 // Some test data
 const data = [
-  { id: 1, name: "Tour", bilds: ["API-tour", "123"] },
+  { id: 1, name: "Tour", bilds: [" API-tour ", " 123 "] },
 ];
 
 // The routes
 const usersRouter = require("./routers/usersRouter")(secret);
-const artwalkRouter = require("./routers/artwalkRouter")(data);
+const artwalkRouter = require("./routers/ArtwalkRouter")(data);
 app.use("/api/users", usersRouter);
 app.use("/api/artwalks", artwalkRouter);
 
-if(process.env.NODE_ENV === 'production') {
-  app.use(express.static('client/build'));
-  app.get("*", (req, res) => {
-      res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-  })
-}
 // Start
 app.listen(port, () => console.log(`Auth Artwalks API running on port ${port}!`));

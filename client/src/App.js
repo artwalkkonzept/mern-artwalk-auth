@@ -2,20 +2,20 @@ import { useState, useEffect } from "react";
 import AuthService from "./AuthService";
 import Login from "./Login";
 
-const API_URL  = process.env.REACT_APP_URL || "http://localhost:8080/api";
+const APP_URL = process.env.REACT_APP_URL;
 
-const authService = new AuthService(`${API_URL}/users/authenticate`);
+const authService = new AuthService(`${APP_URL}api/users/authenticate`);
 
 function App() {
-  const [artwalks, setKittens] = useState([]);
+  const [artwalks, setArtwalks] = useState([]);
   const [requestCount, setRequestCount] = useState(0);
 
   useEffect(() => {
     async function getData() {
-      const url = `${API_URL}/artwalks`;
+      const url = `${APP_URL}api/artwalks`;
       const response = await authService.fetch(url);
       const data = await response.json();
-      setKittens(data);
+      setArtwalks(data);
     }
     getData();
   }, [requestCount]);

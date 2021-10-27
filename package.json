@@ -1,24 +1,19 @@
 {
-  "name": "artwalk_api",
+  "name": "photo-album",
   "version": "1.0.0",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "heroku-postbuild": "npm install --prefix client"
-  },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "bcryptjs": "^2.4.3",
-    "cors": "^2.8.5",
-    "express": "^4.17.1",
-    "express-jwt": "^6.0.0",
-    "mongoose": "^5.7.3",
-    "morgan": "^1.9.1"
+    "nedb": "^1.8.0"
   },
-  "engines": {
-    "node": "10.15.3",
-    "npm": "6.9.0"
+  "scripts": {
+    "start": "cd server && npm start",
+    "dev": "cd client && npm start",
+    "test": "cd server && npm test",
+    "preinstall": "cd server && npm install",
+    "install": "cd client && npm install",
+    "build": "cd client && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com"
   }
 }

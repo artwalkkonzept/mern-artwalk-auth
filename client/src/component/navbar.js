@@ -2,7 +2,7 @@ import React from "react";
 import { Switch, Route, Link } from "react-router-dom";
 
 import Form from "./form";
-import Home from "../App";
+//import Home from "../App";
 
 // Here, we display our Navbar
 const Navbar = () => {

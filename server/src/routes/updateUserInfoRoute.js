@@ -30,7 +30,7 @@ export const updateUserInfoRoute = {
 
             if (id !== userId) return res.status(403).json({ message: 'Not allowed to update that user\'s data' });
 
-            const db = getDbConnection('test-auth-db');
+            const db = getDbConnection('react-auth-db');
             const result = await db.collection('users').findOneAndUpdate(
                 { _id: ObjectID(id) },
                 { $set: { info: updates } },

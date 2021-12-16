@@ -52,7 +52,7 @@ export const SignUpPage = () => {
                     passwordValue !== confirmPasswordValue
                 }
                 onClick={onSignUpClicked}>Sign Up</button></li>
-            <li><button onClick={() => history.push('/login')}>Already have an account? Log In</button></li>
+            <li><button onClick={() => history.push('/login')}>Log In</button></li>
             </div>
         </div>
     );

@@ -90,6 +90,11 @@ export const UserInfoPage = () => {
             <hr />
             <li><button onClick={logOut}>Log Out</button></li>
             </div>
+
+            <li><h3>Liste der Artwalks</h3>
+            <hr />
+            <h4 >{info.name}</h4>
+            <p >{info.bilds}</p></li>
         </div>
     );
 }

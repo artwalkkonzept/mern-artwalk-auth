@@ -19,7 +19,7 @@ export const signUpRoute = {
                 return res.status(500).json({ message: 'Unable to sign up user' });
             }
 
-            const db = getDbConnection('react-auth-db');
+            const db = getDbConnection('react-artwalk-db');
 
             const startingInfo = {
                 name: '',

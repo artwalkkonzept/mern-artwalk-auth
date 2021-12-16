@@ -7,7 +7,7 @@ export const updateOrCreateUserFromOauth = async ({ oauthUserInfo }) => {
         email,
     } = oauthUserInfo;
 
-    const db = getDbConnection('react-auth-db');
+    const db = getDbConnection('react-artwalk-db');
     const existingUser = await db.collection('users').findOne({ email });
 
     if (existingUser) {

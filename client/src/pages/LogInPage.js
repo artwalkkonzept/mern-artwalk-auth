@@ -7,9 +7,7 @@ import { useQueryParams } from '../util/useQueryParams';
 export const LogInPage = () => {
     const [, setToken] = useToken();
 
-    //const [errorMessage, setErrorMessage] = useState('');    
-    const [errorMessage] = useState('');
-
+    const [errorMessage, setErrorMessage] = useState('');
 
     const [emailValue, setEmailValue] = useState('');
     const [passwordValue, setPasswordValue] = useState('');
@@ -51,30 +49,30 @@ export const LogInPage = () => {
     }
 
     return (
-        
         <div className="content-container">
-            <h3>Log In</h3>
+            <h1>Log In</h1>
             <div>
-            {errorMessage && <div className="fail">{errorMessage}</div>}
-            <input
-                value={emailValue}
-                onChange={e => setEmailValue(e.target.value)}
-                placeholder="example@gmail.com" />
-            <input
-                type="password"
-                value={passwordValue}
-                onChange={e => setPasswordValue(e.target.value)}
-                placeholder="password" />
-            <li><button
-                disabled={!emailValue || !passwordValue}
-                onClick={onLogInClicked}>Log In</button></li>
-            <hr />
-            <li><button onClick={() => history.push('/signup')}>Don't have an account? Sign Up</button></li>
-            <li><button
-                disabled={!googleOauthUrl}
-                onClick={() => { window.location.href = googleOauthUrl }}
-            >Log in with Google</button></li>
-            <li><button onClick={() => history.push('/forgot-password')}>Forgot your password?</button></li>
+                {errorMessage && <div className="fail">{errorMessage}</div>}
+                <input
+                    value={emailValue}
+                    onChange={e => setEmailValue(e.target.value)}
+                    placeholder="someone@gmail.com" />
+                <input
+                    type="password"
+                    value={passwordValue}
+                    onChange={e => setPasswordValue(e.target.value)}
+                    placeholder="password" />
+                
+                <li><button
+                    disabled={!emailValue || !passwordValue}
+                    onClick={onLogInClicked}>Log In</button></li>
+                    <hr />
+                    <li><button onClick={() => history.push('/forgot-password')}>Forgot your password?</button></li>
+                    <li><button onClick={() => history.push('/signup')}>Don't have an account? Sign Up</button></li>
+                    <li><button
+                    disabled={!googleOauthUrl}
+                    onClick={() => { window.location.href = googleOauthUrl }}
+                >Log in with Google</button></li>
             </div>
         </div>
     );

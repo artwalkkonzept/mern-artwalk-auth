@@ -8,12 +8,10 @@ import { UserInfoPage } from './pages/UserInfoPage';
 import { PasswordResetLandingPage } from './pages/PasswordResetLandingPage';
 import { PleaseVerifyEmailPage } from './pages/PleaseVerifyEmailPage';
 import { PrivateRoute } from './auth/PrivateRoute';
-import Gallery from "./Component/Gallery";
 
 export const Routes = () => {
     return (
         <Router>
-        <h2>Artwalk</h2>
             <Switch>
                 <PrivateRoute path="/" exact>
                     <UserInfoPage />
@@ -40,7 +38,6 @@ export const Routes = () => {
                     <SignUpPage />
                 </Route>
             </Switch>
-            <Gallery/>
         </Router>
     );
 }

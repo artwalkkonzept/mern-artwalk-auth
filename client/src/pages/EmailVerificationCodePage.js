@@ -29,7 +29,7 @@ export const EmailVerificationCodePage = () => {
 
     return (
         <div className="content-container">
-            <h3>Please Verify Your Email</h3>
+            <h1>Please Verify Your Email</h1>
             <p>You should have received a verification code at the email address you provided. Please enter it here:</p>
             <input
                 placeholder="e.g. 123456"

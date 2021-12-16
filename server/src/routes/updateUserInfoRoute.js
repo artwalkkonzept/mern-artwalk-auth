@@ -31,7 +31,7 @@ export const updateUserInfoRoute = {
             if (id !== userId) return res.status(403).json({ message: 'Not allowed to update that user\'s data' });
             if (!isVerified) return res.status(403).json({ message: 'You need to verify your email before you can update your data'})
 
-            const db = getDbConnection('react-auth-db');
+            const db = getDbConnection('react-artwalk-db');
             const result = await db.collection('users').findOneAndUpdate(
                 { _id: ObjectID(id) },
                 { $set: { info: updates } },

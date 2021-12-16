@@ -17,7 +17,7 @@ export const logInRoute = {
         new CognitoUser({ Username: email, Pool: awsUserPool })
             .authenticateUser(new AuthenticationDetails({ Username: email, Password: password }), {
                 onSuccess: async result => {
-                    const db = getDbConnection('react-auth-db');
+                    const db = getDbConnection('react-artwalk-db');
                     const user = await db.collection('users').findOne({ email });
 
                     const { _id: id, isVerified, info } = user;

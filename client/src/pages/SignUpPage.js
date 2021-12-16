@@ -4,11 +4,9 @@ import axios from 'axios';
 import { useToken } from '../auth/useToken';
 
 export const SignUpPage = () => {
-    //const [token, setToken] = useToken();
-    const [ setToken] = useToken();
+    const [token, setToken] = useToken();
 
-    //const [errorMessage, setErrorMessage] = useState('');
-    const [errorMessage] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
 
     const [emailValue, setEmailValue] = useState('');
     const [passwordValue, setPasswordValue] = useState('');
@@ -28,31 +26,31 @@ export const SignUpPage = () => {
 
     return (
         <div className="content-container">
-            <h3>Sign Up</h3>
-            <div>
-            {errorMessage && <div className="fail">{errorMessage}</div>}
-            <input
-                value={emailValue}
-                onChange={e => setEmailValue(e.target.value)}
-                placeholder="example@gmail.com" />
-            <input
-                type="password"
-                value={passwordValue}
-                onChange={e => setPasswordValue(e.target.value)}
-                placeholder="password" />
-            <input
-                type="password"
-                value={confirmPasswordValue}
-                onChange={e => setConfirmPasswordValue(e.target.value)}
-                placeholder="password" />
-            <hr />
-            <li><button
-                disabled={
-                    !emailValue || !passwordValue ||
-                    passwordValue !== confirmPasswordValue
-                }
-                onClick={onSignUpClicked}>Sign Up</button></li>
-            <li><button onClick={() => history.push('/login')}>Log In</button></li>
+            <h1>Sign Up</h1>
+                <div>
+                {errorMessage && <div className="fail">{errorMessage}</div>}
+                <input
+                    value={emailValue}
+                    onChange={e => setEmailValue(e.target.value)}
+                    placeholder="someone@gmail.com" />
+                <input
+                    type="password"
+                    value={passwordValue}
+                    onChange={e => setPasswordValue(e.target.value)}
+                    placeholder="password" />
+                <input
+                    type="password"
+                    value={confirmPasswordValue}
+                    onChange={e => setConfirmPasswordValue(e.target.value)}
+                    placeholder="password" />
+                <hr />
+                <li><button
+                    disabled={
+                        !emailValue || !passwordValue ||
+                        passwordValue !== confirmPasswordValue
+                    }
+                    onClick={onSignUpClicked}>Sign Up</button></li>
+                <li><button onClick={() => history.push('/login')}> Log In</button></li>
             </div>
         </div>
     );

@@ -26,7 +26,7 @@ export const PasswordResetLandingPage = () => {
 
     return (
         <div className="content-container">
-            <h3>Reset Password</h3>
+            <h1>Reset Password</h1>
             <p>Please enter a new password</p>
             <input
                 value={passwordResetCode}

@@ -1,4 +1,4 @@
-//import { ObjectID } from 'mongodb';
+import { ObjectID } from 'mongodb';
 import jwt from 'jsonwebtoken';
 import { CognitoUser } from 'amazon-cognito-identity-js';
 import { getDbConnection } from '../db';
@@ -14,7 +14,7 @@ export const verifyEmailRoute = {
             .confirmRegistration(verificationString, true, async (err) => {
                 if (err) return res.status(401).json({ message: 'The email verfication code is incorrect' });
 
-                const db = getDbConnection('react-auth-db');
+                const db = getDbConnection('react-artwalk-db');
                 const result = await db.collection('users')
                     .findOneAndUpdate({ email }, {
                         $set: { isVerified: true }

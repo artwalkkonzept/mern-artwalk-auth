@@ -22,22 +22,20 @@ export const ForgotPasswordPage = () => {
 
     return success ? (
         <div className="content-container">
-            <h3>Success</h3>
+            <h1>Success</h1>
             <p>Check your email for a reset link</p>
         </div>
     ) : (
         <div className="content-container">
-            <h3>Forgot your Password</h3>
-            <div>
-            <p>Enter your email for a reset link</p>
+            <h1>Forgot Password</h1>
+            <p>Enter your email and we'll send you a reset link</p>
             {errorMessage && <div className="fail">{errorMessage}</div>}
             <input
                 value={emailValue}
                 onChange={e => setEmailValue(e.target.value)}
-                placeholder="example@gmail.com" />
+                placeholder="someone@gmail.com" />
             <li><button disabled={!emailValue} onClick={onSubmitClicked}>Send Reset Link</button></li>
             <li><button onClick={() => history.push('/login')}>Back to Log In</button></li>
-            </div>
         </div>
     );
 }

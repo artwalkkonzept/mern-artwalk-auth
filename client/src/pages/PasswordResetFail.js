@@ -5,7 +5,7 @@ export const PasswordResetFail = () => {
 
     return (
         <div className="content-container">
-            <h3>Uh oh...</h3>
+            <h1>Uh oh...</h1>
             <p>
                 Something went wrong while trying to reset your password.
             </p>
